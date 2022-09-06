@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('order_payments', function (Blueprint $table) {
             $table->id();
-
             $table->unsignedBigInteger('user_id')->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('order_id')->index();
@@ -26,7 +25,6 @@ return new class extends Migration
             $table->integer("status");
             $table->string("account_number");
             $table->date("expire_date");
-	
             $table->timestamps();
         });
     }
